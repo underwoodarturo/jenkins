@@ -1,0 +1,17 @@
+@Library("habi-jenkins-utils") _
+
+TemplateAutomationTrigger {
+    nodejs = 'node_v_20.0.7'
+    agent = 'automation-medium'
+    schedule = '0 8 * * 2'
+    commandRun = 'npm test -- --grep @registerAndAssignRole'
+    automation_type = 'playwright'
+    report_type = 'jenkins'
+    vars = [
+        'ENV_URL_BASE',
+        'ENV_GOOGLE_CLIENT_SECRET',
+        'ENV_PSS',
+        'ENV_USERNAME',
+        'ENV_GOOGLE_ACCESS_TOKEN'
+    ]
+}

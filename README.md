@@ -1,9 +1,10 @@
-# Habi
-nx generate @habi/playwright-plugin:generator <automation>
-nx g @nx/playwright:configuration --project=<automation>
+# Proyectos de Automatización / Procesos Habi
 
+## Comandos 
 
-# Proyectos de Automatización / Procesos
+`nx generate @habi/playwright-plugin:generator <automation>`
+
+`nx g @nx/playwright:configuration --project=<automation>`
 
 ## Resumen
 

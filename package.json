@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "automation:automation-test": "nx e2e automation-test --ui",
-    "automation:test": "nx e2e test --ui"
+    "automation:test": "nx e2e test --ui=false"
   },
   "private": true,
   "dependencies": {

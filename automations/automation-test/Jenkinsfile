@@ -1,8 +1,6 @@
-@Library("habi-jenkins-utils") _
-
 TemplateAutomationTrigger {
     nodejs = 'node_v_20.0.7'
-    agent = 'automation-medium'
+    agent = 'automation-medium-2'
     schedule = '0 8 * * 2'
     commandRun = 'npm test -- --grep @registerAndAssignRole'
     automation_type = 'playwright'

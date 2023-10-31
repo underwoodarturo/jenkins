@@ -1,15 +1,11 @@
-TemplateAutomationTrigger {
-    nodejs = 'node_v_20.0.7'
-    agent = 'automation-medium-2'
-    schedule = '0 8 * * 2'
-    commandRun = 'npm test -- --grep @registerAndAssignRole'
-    automation_type = 'playwright'
-    report_type = 'jenkins'
-    vars = [
-        'ENV_URL_BASE',
-        'ENV_GOOGLE_CLIENT_SECRET',
-        'ENV_PSS',
-        'ENV_USERNAME',
-        'ENV_GOOGLE_ACCESS_TOKEN'
-    ]
+pipeline {
+   agent { docker { image 'mcr.microsoft.com/playwright:v1.39.0-jammy' } }
+   stages {
+      stage('e2e-tests') {
+         steps {
+            sh 'ci'
+            sh 'npx playwright test'
+         }
+      }
+   }
 }

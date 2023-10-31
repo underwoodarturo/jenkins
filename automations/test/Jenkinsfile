@@ -1,11 +1,11 @@
-TemplateAutomationTrigger {
-    nodejs = 'node_v_20.0.7'
-    agent = 'automation-medium'
-    schedule = '0 8 * * 2'
-    commandRun = 'npm run automation:test'
-    automation_type = 'playwright'
-    report_type = 'jenkins'
-    vars = [
-        
-    ]
+pipeline {
+   agent { docker { image 'mcr.microsoft.com/playwright:v1.39.0-jammy' } }
+   stages {
+      stage('e2e-tests') {
+         steps {
+            sh 'ci'
+            sh 'npx playwright test'
+         }
+      }
+   }
 }

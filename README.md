@@ -6,6 +6,8 @@
 
 `nx g @nx/playwright:configuration --project=<automation>`
 
+`nx run playwright-plugin:create-jenkins-job --from=template --name=OK3 --password=11ae5ab68bb06429f8883a76751572a283 --username=admin --url=http://localhost:8080`
+
 ## Resumen
 
 Los proyectos de automatización tienen un doble enfoque, dirigido tanto a las pruebas E2E *(end-to-end)* como a la automatización de procesos:

@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "create-jenkins-job": {
+      "implementation": "./src/executors/create-jenkins-job/executor",
+      "schema": "./src/executors/create-jenkins-job/schema.json",
+      "description": "create-jenkins-job executor"
+    }
+  }
+}

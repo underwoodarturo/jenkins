@@ -4,6 +4,10 @@
   "sourceRoot": "playwright-plugin/src",
   "projectType": "library",
   "targets": {
+    "create-jenkins-job": {
+      "executor": "@habi/playwright-plugin:create-jenkins-job",
+      "options": {}
+    },
     "build": {
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
@@ -43,7 +47,8 @@
         "lintFilePatterns": [
           "playwright-plugin/**/*.ts",
           "playwright-plugin/package.json",
-          "playwright-plugin/generators.json"
+          "playwright-plugin/generators.json",
+          "playwright-plugin/executors.json"
         ]
       }
     },

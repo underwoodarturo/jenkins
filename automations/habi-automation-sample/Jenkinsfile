@@ -8,10 +8,10 @@ TemplateAutomationTrigger {
     automation_type = 'playwright'
     report_type = 'jenkins'
     vars = [
-        'ENV_URL_BASE',
-        'ENV_GOOGLE_CLIENT_SECRET',
-        'ENV_PSS',
-        'ENV_USERNAME',
-        'ENV_GOOGLE_ACCESS_TOKEN'
+        'NX_ENV_URL_BASE',
+        'NX_ENV_GOOGLE_CLIENT_SECRET',
+        'NX_ENV_PSS',
+        'NX_ENV_USERNAME',
+        'NX_ENV_GOOGLE_ACCESS_TOKEN'
     ]
 }

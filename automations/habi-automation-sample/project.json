@@ -1,19 +1,21 @@
 {
-  "name": "test",
+  "name": "habi-automation-sample",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "targets": {
     "e2e": {
       "executor": "@nx/playwright:playwright",
-      "outputs": ["{workspaceRoot}/dist/.playwright/automations/test"],
+      "outputs": [
+        "{workspaceRoot}/dist/.playwright/automations/habi-automation-sample"
+      ],
       "options": {
-        "config": "automations/test/playwright.config.ts"
+        "config": "automations/habi-automation-sample/playwright.config.ts"
       }
     },
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["automations/test/**/*.{js,ts}"]
+        "lintFilePatterns": ["automations/habi-automation-sample/**/*.{js,ts}"]
       }
     }
   }

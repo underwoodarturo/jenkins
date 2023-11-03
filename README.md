@@ -2,7 +2,7 @@
 
 ## Comandos 
 
-`nx generate @habi/playwright-plugin:generator <automation>`
+`nx g @habi/playwright-plugin:generator <automation>`
 
 `nx g @nx/playwright:configuration --project=<automation>`
 

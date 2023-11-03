@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@habi/playwright-plugin": ["playwright-plugin/src/index.ts"]
+      "@habi/playwright-plugin": ["playwright-plugin/src/index.ts"],
+      "@habi/utils-testing": ["libs/utils-testing/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -3,17 +3,21 @@
 
 ## Comandos 
 
+- [] Instala las dependencias
+
+    `npm install`
+
 - [] Crea un nuevo proyecto
 
-    `nx g @habi/playwright-plugin:generator <automation-project>`
+    `npx nx g @habi/playwright-plugin:generator <automation-project>`
 
 - [] Agrega la configuración de Habi
 
-    `nx g @nx/playwright:configuration --project=<automation-project>`
+    `npx nx g @nx/playwright:configuration --project=<automation-project>`
 
 - [] Crea un job en Jenkins copiando la configuración de un template
 
-    `nx run playwright-plugin:create-jenkins-job --from=<template-name> --name=<automation-project> --password=<password> --username=<username> --url=<jenkins-url>`
+    `npx nx run playwright-plugin:create-jenkins-job --from=<template-name> --name=<automation-project> --password=<password> --username=<username> --url=<jenkins-url>`
 
 ## Resumen
 

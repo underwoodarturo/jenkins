@@ -3,14 +3,14 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "automation:habi-automation-sample": "nx e2e habi-automation-sample --ui",
-    "automation:habi-automation-sample2": "nx e2e habi-automation-sample2 --ui"
+    "automation:habi-automation-sample": "nx e2e habi-automation-sample --ui"
   },
   "private": true,
   "dependencies": {
     "@nx/devkit": "17.0.2",
     "@playwright/test": "^1.39.0",
     "@swc/helpers": "~0.5.2",
+    "@testla/screenplay-playwright": "^1.2.0",
     "request": "^2.88.2",
     "tslib": "^2.3.0"
   },

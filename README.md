@@ -1,12 +1,19 @@
-# Proyectos de Automatización / Procesos Habi
+# Proyectos de Automatización
+
 
 ## Comandos 
 
-`nx g @habi/playwright-plugin:generator <automation>`
+- [] Crea un nuevo proyecto
 
-`nx g @nx/playwright:configuration --project=<automation>`
+    `nx g @habi/playwright-plugin:generator <automation-project>`
 
-`nx run playwright-plugin:create-jenkins-job --from=template --name=OK3 --password=11ae5ab68bb06429f8883a76751572a283 --username=admin --url=http://localhost:8080`
+- [] Agrega la configuración de Habi
+
+    `nx g @nx/playwright:configuration --project=<automation-project>`
+
+- [] Crea un job en Jenkins copiando la configuración de un template
+
+    `nx run playwright-plugin:create-jenkins-job --from=<template-name> --name=<automation-project> --password=<password> --username=<username> --url=<jenkins-url>`
 
 ## Resumen
 
@@ -45,32 +52,41 @@ Este proyecto sigue una estructura de carpetas específica para garantizar clari
 
 
 ```bash
+
 .
-├── Jenkinsfile
-├── README.md
-├── package.json
-├── playwright.config.ts  # Configuracion general playwright
-└── src
-    ├── Actors # Usuarios principales realizando acciones
-    │   └── user.ts
-    ├── Cases  # Agrupacion de los casos de uso
-    │   ├── Case
-    │   │   ├── test.spec.ts  # Configuraciones especificas playwright
-    │   │   └── testCase1.ts
-    │   └── README.md
-    ├── Interactions # Las interacciones realizadas por un usuario (Click, Scrolls)
-    │   ├── FilltheForm.ts
-    │   └── ui
-    │       └── selectors.ts
-    ├── Models  # Modelos de datos
-    │   └── data.ts
-    ├── Questions # Representa la forma de hacer queries en el sistema
-    │   └── question.ts
-    ├── Tasks  # Conjunto de tareas realizadas por un usuario 
-    │   └── task1.ts
-    └── utils
-        ├── gcp_connector.ts
-        └── rest_connector.ts
+...
+└── automations
+│  ├── ...
+│  └── <automation-project>
+│        ├── Jenkinsfile
+│        ├── README.md
+│        ├── project.json
+│        ├── playwright.config.ts  # Configuracion general playwright
+│        └── e2e
+│            ├── Actors # Usuarios principales realizando acciones
+│            │   └── user.ts
+│            ├── Cases  # Agrupacion de los casos de uso
+│            │   ├── Case
+│            │       ├── test.spec.ts  # Configuraciones especificas playwright
+│            │       └── testCase1.ts
+│            │   
+│            ├── Interactions # Las interacciones realizadas por un usuario (Click, Scrolls)
+│            │   ├── FilltheForm.ts
+│            │   └── ui
+│            │       └── selectors.ts
+│            ├── Models  # Modelos de datos
+│            │   └── data.ts
+│            ├── Questions # Representa la forma de hacer queries en el sistema
+│            │   └── question.ts
+│            ├── Tasks  # Conjunto de tareas realizadas por un usuario 
+│            │   └── task1.ts
+└── libs
+│    └── utils-testing
+│        └── src
+│            └── lib
+│                └── index.ts
+│
+└── package.json # Dependencias globales de los proyectos
 ```
 
 ### Configuracion de Playwright
@@ -88,10 +104,11 @@ La estructura propuesta busca mantener el objetivo planteado por el patron de di
 - **Tasks**: Representan objetivos o intenciones del usuario de alto nivel que pueden constar de múltiples interacciones.
 - **Cases**: Agrupa los diferentes casos de prueba o automatización, puede tener una estructura interna similar a la global cuando sea necesario.
 
+- **README.md**: Contendrá la documentación especifica del proyecto, información, descripción, responsables, etc.
 
-### Funciones de Utilidad (`src/utils`)
+### Funciones de Utilidad (`libs/utils-testing/src/lib`)
 
-En el directorio `utils`, hay funciones de utilidad y conectores que ayudan a establecer conexiones o realizar tareas comunes de utilidad, se plantea definir estas herramientas a traves de interfaces para hacerlas modificable, extensibles y reutilizables.
+En el directorio `libs`, hay funciones de utilidad y conectores que ayudan a establecer conexiones o realizar tareas comunes de utilidad, se plantea definir estas herramientas a traves de interfaces para hacerlas modificable, extensibles y reutilizables.
 
 Por ejemplo:
 
@@ -108,6 +125,3 @@ Se plantea el uso de los siguientes contextos:
 ### Jenkins (`Jenkinsfile`)
 
 Este archivo es el núcleo de la configuración de Jenkins de ellos. Define los pasos y etapas que tomará su tubería de CI/CD.
-
-
-### Gitlab CI (`.gitlab-ci.yml`)

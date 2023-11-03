@@ -1,5 +1,16 @@
 # <%= name %>
 
-<!---
- Describe en este documento para que sirve el proyecto de <%= name %>
----!>
+## Objetivo
+Indica cual es el objetivo de este proyecto.
+
+## Descripción
+Se descriptivo con lo que hace este proyecto de automation. Proporciona contexto o links con documentación relevante al proyecto.
+
+## Responsable
+Indica quien es el equipo responsable para mantener este automation.
+
+## Tipo
+Tipo de automation que estás utilizando
+
+## Tags
+Agrega etiquetas o metadata relevante a tu proyecto. Ej: `webscrapping` `aws` 
